@@ -38,12 +38,12 @@ Note 2: Please don't worry about the `gnome-desktop` package; it's just a librar
 
 - Ubuntu:
 ```bash
-sudo apt install dconf-cli libappindicator3-1 libgnome-desktop-4-1 libwebkit2gtk-4.1-0 libwnck-3-0 mesa-utils vdpauinfo xdg-user-dirs
+sudo apt install dconf-cli libgnome-desktop-4-1 libwebkit2gtk-4.1-0 libwnck-3-0 mesa-utils vdpauinfo xdg-user-dirs
 ```
 
 - Fedora:
 ```bash
-sudo dnf install dconf glx-utils gnome-desktop4 libappindicator-gtk3 libwnck3 vdpauinfo webkit2gtk4.1 xdg-user-dirs
+sudo dnf install dconf glx-utils gnome-desktop4 libwnck3 vdpauinfo webkit2gtk4.1 xdg-user-dirs
 ```
 
 #### Build dependencies

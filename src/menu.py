@@ -5,9 +5,8 @@ import setproctitle
 
 import gi
 gi.require_version("Gtk", "3.0")
-gi.require_version('AppIndicator3', '0.1')
+
 from gi.repository import GLib, Gtk
-from gi.repository import AppIndicator3 as AppIndicator
 
 from pydbus import SessionBus
 
@@ -17,9 +16,6 @@ except ModuleNotFoundError:
     from hidamari.commons import *
 
 logger = logging.getLogger(LOGGER_NAME)
-
-APP_INDICATOR_ID = PROJECT
-APP_INDICATOR_ICON = "io.github.jeffshee.Hidamari"
 
 # Reuse SessionBus instance to avoid creating multiple connections
 _session_bus = None
@@ -125,11 +121,6 @@ def build_menu(mode):
 def show_systray_icon(mode):
     setproctitle.setproctitle(mp.current_process().name)
     
-    menu = build_menu(mode)
-    indicator = AppIndicator.Indicator.new(id=APP_INDICATOR_ID, icon_name=APP_INDICATOR_ICON,
-                                           category=AppIndicator.IndicatorCategory.SYSTEM_SERVICES)
-    indicator.set_status(AppIndicator.IndicatorStatus.ACTIVE)
-    indicator.set_menu(menu)
     logger.info("[Systray] Ready")
     Gtk.main()
 
